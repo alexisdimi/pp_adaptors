@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-dependencies ["git://github.com/alexisdimi/pp_adaptors.git#egg=pp_adaptors"]
+dependencies = ["git://github.com/alexisdimi/pp_adaptors.git#egg=pp_adaptors"]
     
 setuptools.setup(
     name="pp_adaptors",
