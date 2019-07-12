@@ -137,7 +137,7 @@ def ascii_equal(left, right):
                     for c1, c2 in paired)
 
 
-def apply_edits(text, edits, endtag="<END>"):
+def apply_edits(text, edits, endtag=" <END> "):
     """
     Annotate `text` in the OpenAPI style. `edits` is a list of 4-tuples
     describing the annotations.
@@ -172,6 +172,7 @@ def apply_edits(text, edits, endtag="<END>"):
                 'Span {start}..{end} extends past the end of the input (length {maxlen})!'.format(**locals()))
 
         end += 1      # Convert to a Python range end
+        tag = " "+tag.strip()+" "
 
         content = text[start:end]
         if match and not ascii_equal(content.replace("\n", " "), match):
